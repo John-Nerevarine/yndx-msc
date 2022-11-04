@@ -50,7 +50,6 @@ while not(songs[0]['track'].available):
 clear()
 print('Downloading...')
 songs[0]['track'].download('song0.mp3')
-input('wait')
 name = ''
 for artist in songs[0]['track'].artists:
     name += (artist.name + ', ')
