@@ -67,14 +67,14 @@ while True:
     queue = (queue + 1) % 2
     trackIndex += 1
 
-    songs[queue]['track'] = userPlaylist[trackIndex].fetch_track()
+    songs[queue]['track'] = userPlaylist[tracks[trackIndex]].fetch_track()
     while not(songs[queue]['track'].available):
         trackIndex += 1
-        songs[queue]['track'] = userPlaylist[trackIndex].fetch_track()
+        songs[queue]['track'] = userPlaylist[tracks[trackIndex]].fetch_track()
 
         if trackIndex >= len(tracks):
             trackIndex = 0
-            songs[queue]['track'] = userPlaylist[trackIndex].fetch_track()
+            songs[queue]['track'] = userPlaylist[tracks[trackIndex]].fetch_track()
 
     songs[queue]['track'].download('song'+ str(queue) +'.mp3')
     
